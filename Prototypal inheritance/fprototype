@@ -1,0 +1,92 @@
+/* let animal = {
+    eats: true
+  };
+  
+  function Rabbit(name) {
+    this.name = name;
+  }
+  
+  Rabbit.prototype = animal;
+  
+  let rabbit = new Rabbit("White Rabbit"); //  rabbit.__proto__ == animal
+  
+  console.log( rabbit.eats );
+    */
+/* 
+  function Rabbit(){
+    
+  }
+
+  console.log(Rabbit.prototype.constructor ===Rabbit);
+
+  //Naturally, if we do nothing, the constructor property is available to all rabbits through [[Prototype]]:
+
+  let rabbit = new Rabbit();
+  console.log(rabbit.constructor == Rabbit);//from prototype
+   */
+
+
+ /*  function Rabbit(name){
+    this.name = name;
+    console.log(name);
+  }
+
+  let rabbit = new Rabbit('White Rabit');
+  let rabbit2 = new Rabbit('Black Rabbit'); */
+  //we can choose to add/remove properties to the default "prototype" instead of overwriting it as a whole:
+/* 
+  function Rabbit(){
+    Rabbit.prototype.jumps = true;
+
+  } */
+
+
+  //TASK1*************************************************
+  //A
+/*   function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+Rabbit.prototype = {};
+
+console.log( rabbit.eats ); //true
+ */
+//B
+
+
+/* function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+delete rabbit.eats;
+
+console.log( rabbit.eats );  */// true
+
+//C
+function Rabbit() {}
+Rabbit.prototype = {
+  eats: true
+};
+
+let rabbit = new Rabbit();
+
+delete Rabbit.prototype.eats;
+
+console.log( rabbit.eats );
+
+//TAST2*****************************************************
+//Create an object with the same constructor 
+function User(name) {
+    this.name = name;
+  }
+  
+  let user = new User('Krishnam');
+  let user2 = new user.constructor('upadhyay');
+  
+  console.log( user2.name ); 
