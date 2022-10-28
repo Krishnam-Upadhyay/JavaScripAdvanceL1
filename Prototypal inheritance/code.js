@@ -3,6 +3,7 @@
     walk(){
         console.log('Animal Walk');
     }
+  
 };
 
 let rabbit ={
